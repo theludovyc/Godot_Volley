@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Script/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Script/Player2.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.0
@@ -38,6 +39,30 @@ __meta__ = {
 }
 
 [node name="RayCast2D" type="RayCast2D" parent="Player"]
+enabled = true
+cast_to = Vector2( 0, 33 )
+
+[node name="Player2" type="KinematicBody2D" parent="."]
+position = Vector2( 797.224, 597.042 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Player2"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Player2"]
+margin_left = -18.6877
+margin_top = -52.0587
+margin_right = 21.3123
+margin_bottom = -38.0587
+text = "Bla"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="Player2"]
 enabled = true
 cast_to = Vector2( 0, 33 )
 
