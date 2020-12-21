@@ -8,7 +8,7 @@ var dirX := 0
 var dirY := 0
 
 var x_speed := 0.0
-const X_ACC = 1.8
+const X_ACC = 0.5
 const MAX_X_SPEED = 200.0
 
 const FALL_SPEED = 310.0
@@ -19,10 +19,16 @@ const MAX_JUMP_SPEED = 220.0
 
 var inputs:PoolStringArray
 
+var canMove := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	inputs = ["ui_right", "ui_left", "ui_up"]
 	pass # Replace with function body.
+
+func myPause(var b):
+	set_process(b)
+	set_physics_process(b)
 
 func _process(delta):
 	dirX = int(Input.is_action_pressed(inputs[0]))-int(Input.is_action_pressed(inputs[1]))
