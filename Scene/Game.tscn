@@ -8,16 +8,16 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.0
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 225, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 300, 10 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 450, 10 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10, 100 )
 
 [node name="Game" type="Node"]
@@ -76,41 +76,41 @@ position = Vector2( 450, 600 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundP1"]
 position = Vector2( -225, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="GroundP2" type="StaticBody2D" parent="."]
 position = Vector2( 450, 600 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundP2"]
 position = Vector2( 225, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="Wall" type="StaticBody2D" parent="."]
 position = Vector2( 0, 300 )
 rotation = -1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Wall2" type="StaticBody2D" parent="."]
 position = Vector2( 900, 300 )
 rotation = -1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Ceil" type="StaticBody2D" parent="."]
 position = Vector2( 450, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ceil"]
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2( 450, 600 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2( 0, -100 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="ScoreP1" type="Label" parent="."]
 margin_left = 197.0
@@ -131,3 +131,17 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LabelTimer" type="Label" parent="."]
+margin_left = 445.633
+margin_top = 341.591
+margin_right = 485.633
+margin_bottom = 355.591
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
