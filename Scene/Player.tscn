@@ -4,6 +4,7 @@
 [ext_resource path="res://Art/tile_0169.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 9.0
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 225, 530 )
@@ -15,6 +16,10 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
+[node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D"]
+enabled = true
+cast_to = Vector2( 0, 9.5 )
+
 [node name="Label" type="Label" parent="."]
 margin_left = -10.2787
 margin_top = -31.2465
@@ -24,7 +29,3 @@ text = "Bla"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( 0, 11 )

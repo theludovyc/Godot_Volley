@@ -9,13 +9,14 @@ var dirY := 0
 
 var x_speed := 0.0
 const X_ACC = 0.5
-const MAX_X_SPEED = 100.0
+const MAX_X_SPEED = 115.0
 
-const FALL_SPEED = 200.0
+const MAX_JUMP_SPEED = 150.0
+const FALL_SPEED = MAX_JUMP_SPEED * 2.5
 
 var wantJump := false
 var y_speed := 0.0
-const MAX_JUMP_SPEED = 100.0
+
 
 var inputs:PoolStringArray
 
@@ -41,7 +42,7 @@ func _process(delta):
 	wantJump = Input.is_action_just_pressed(inputs[2])
 	
 func _physics_process(delta):
-	if $RayCast2D.is_colliding():
+	if $CollisionShape2D/RayCast2D.is_colliding():
 		$Label.text = "on ground"
 		y_speed = 0
 		
