@@ -21,6 +21,7 @@ enabled = true
 cast_to = Vector2( 0, 9.5 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = -10.2787
 margin_top = -31.2465
 margin_right = 29.7213
