@@ -21,9 +21,9 @@ func spawnBall():
 	ball = Ball.instance()
 	
 	if !lastWin:
-		ball.position = Vector2(225, 400)
+		ball.position = Vector2(50, 75)
 	else:
-		ball.position = Vector2(710, 400)
+		ball.position = Vector2(50, 75)
 		
 	ball.connect("body_entered", self, "_on_Ball_body_entered")
 	call_deferred("add_child", ball)

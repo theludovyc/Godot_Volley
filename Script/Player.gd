@@ -9,13 +9,13 @@ var dirY := 0
 
 var x_speed := 0.0
 const X_ACC = 0.5
-const MAX_X_SPEED = 200.0
+const MAX_X_SPEED = 100.0
 
-const FALL_SPEED = 310.0
+const FALL_SPEED = 200.0
 
 var wantJump := false
 var y_speed := 0.0
-const MAX_JUMP_SPEED = 220.0
+const MAX_JUMP_SPEED = 100.0
 
 var inputs:PoolStringArray
 
